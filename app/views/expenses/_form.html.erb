@@ -1,0 +1,39 @@
+<h1>New Expense</h1>
+
+<%= form_with model: expense do |form| %>
+  <div>
+    <%= form.label :month %><br>
+    <%= form.text_field :month %>
+    <% expense.errors.full_messages_for(:month).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+    <% expense.errors.full_messages_for(:year).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :total %><br>
+    <%= form.text_area :total %>
+    <% expense.errors.full_messages_for(:total).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :user %><br>
+    <%= form.text_field :user %>
+    <% expense.errors.full_messages_for(:user).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

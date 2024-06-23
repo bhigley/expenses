@@ -1,0 +1,14 @@
+<h1><%= @expense.user %></h1>
+<%= render 'shared/navigation' %>
+
+<p>Month: <%= @expense.month %></p>
+<p>Year: <%= @expense.year %></p>
+<p>Total: <%= @expense.total %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_expense_path(@expense) %></li>
+  <li><%= link_to "Destroy", expense_path(@expense), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
