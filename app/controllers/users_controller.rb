@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+
+  def home
+  end
   def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
+    @expenses = Expense.where(user_id: @user.id).order(month: :asc, year: :asc)
+    @total_expenses = @expenses.sum(:total)
   end
 
   def new

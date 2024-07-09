@@ -26,14 +26,6 @@
   </div>
 
   <div>
-    <%= form.label :user %><br>
-    <%= form.text_field :user %>
-    <% expense.errors.full_messages_for(:user).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>
